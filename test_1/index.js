@@ -1,5 +1,4 @@
 "use strict";
-
 /**
  * The `test_data.json` contains an object array of "The Simpsons" characters and their catchphrase. This function
  * will add a new property `example` to each object that is a combining the `first_name`, `last_name`, and
@@ -16,5 +15,19 @@ module.exports = function test1() {
   // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
   // them and start fresh.
 
+  const fs = require('fs');
+
+  let simpsons = require('./test_data.json');
+  //let simpsons = JSON.parse(rawdata);
+  for (let character in simpsons){
+
+  	
+  	simpsons[character].example = simpsons[character].first_name + " " + simpsons[character].last_name + " says " + simpsons[character].catchphrase;
+  }
+  results = simpsons;
+  console.log(simpsons);
+
   return results;
 };
+
+
