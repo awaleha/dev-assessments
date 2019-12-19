@@ -16,6 +16,24 @@ module.exports = function test2() {
 
   // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
   // them and start fresh.
+  let simpsons = require('./test_data.json');
+
+  //loops through each item in array
+  for (let character in simpsons){
+
+  	//creates new key example, puts the example phrase as its value
+  	simpsons[character].example = simpsons[character].first_name + " " + simpsons[character].last_name + " says " + simpsons[character].catchphrase;
+  }
+
+  //returns new json
+  results = filterForSimpsons(simpsons);
+  console.log(results);
 
   return results;
 };
+
+//filters for characters with the last name 'Simpson' using Array.prototype.filter()
+function filterForSimpsons(characters){
+	let simpsonsFamily = characters.filter(char => char.last_name == 'Simpson');
+	return simpsonsFamily;
+}
