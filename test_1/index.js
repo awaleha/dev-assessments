@@ -14,16 +14,18 @@ module.exports = function test1() {
 
   // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
   // them and start fresh.
-
-  const fs = require('fs');
-
+  
+  //grabs json,
   let simpsons = require('./test_data.json');
-  //let simpsons = JSON.parse(rawdata);
+
+  //loops through each item in array
   for (let character in simpsons){
 
-  	
+  	//creates new key example, puts the example phrase as its value
   	simpsons[character].example = simpsons[character].first_name + " " + simpsons[character].last_name + " says " + simpsons[character].catchphrase;
   }
+
+  //returns new json
   results = simpsons;
   console.log(simpsons);
 
