@@ -21,7 +21,7 @@ module.exports = function test2() {
   //loops through each item in array
   for (let character in simpsons){
 
-  	//creates new key example, puts the example phrase as its value
+  	//creates new key 'example', creates a phrase comprised of characters name and catchphrase as the value
   	simpsons[character].example = simpsons[character].first_name + " " + simpsons[character].last_name + " says " + simpsons[character].catchphrase;
   }
 
